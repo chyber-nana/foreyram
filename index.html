@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Be My Valentine</title>
+</head>
+<body>
+  <h1 id="title">Be My Virtual Valentine Eyram🌹</h1>
+  <button id="yes">Yes 🥰</button>
+  <span id="message">Good girl 🤭🤭. Knew you would give in.😌 Virtual chocolates 🍫.</span>
+  <div class="no"><button id="no">No</button></div>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Quicksand', Calibri;
+    }
+
+    body {
+      color: #fff;
+      width: 100%;
+      height: 100dvh;
+      background-image: linear-gradient(45deg, purple, black);
+      position: relative;
+    }
+
+    h1 {
+      font-size: 4rem;
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      top: 20%; 
+    }
+
+    #message {
+      font-size: 2rem;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      background-color: #ff69b4;
+      padding: .4rem;
+      border-radius: 0.5rem;
+      z-index: 1000;
+      top: -10000px;
+      transition: all 0.35s ease-in-out;
+    }
+
+    button {
+      font-size: 2rem;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: absolute;
+    }
+
+    button#yes {
+      left: 25%;
+      top: 50%;
+      background-color: #ffffff;
+    }
+
+    button#yes:hover {
+      background-color: #ff69b4;
+      color: #fff;
+    }
+
+    .no {
+      position: absolute;
+      padding: 25px;
+      /* background-color: aqua; */
+      width: 10rem;
+      height: 10rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      left: 65%;
+      top: 45%;
+    }
+
+
+
+  </style>
+  <script>
+    const messages = ["Resisting is futile 😘", "You know you want to 🥰", "Don't be shy, say yes! 💖", "I promise it'll be fun! 🎉", "Think of all the virtual chocolates 🍫", "You can't escape my love! 💕", "Just one click away from happiness! 🌈", "I won't take no for an answer! 😜", "Your heart says yes, don't deny it! ❤️", "Let's make this Valentine's Day unforgettable! 🌹"]
+    let scale = 1
+    document.getElementsByClassName("no")[0].addEventListener("mouseover", () => {
+      document.getElementsByClassName("no")[0].style.top = `${Math.floor(Math.random() * 80) + 1}%`
+      document.getElementsByClassName("no")[0].style.left = `${Math.floor(Math.random() * 80) + 1}%`
+      document.getElementById("yes").style.transform = `scale(${scale})`
+      document.getElementById("title").innerHTML = messages[Math.floor(Math.random() * messages.length)]
+      scale += 0.1
+    })
+    document.getElementById("yes").addEventListener("click", () => {
+      document.getElementById("message").style.top = "0"
+    })
+  </script>
+</body>
+</html>
