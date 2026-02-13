@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Check this out!</title>
+  <title>Check this out</title>
 </head>
 <body>
   <h1 id="title">Be My Virtual Valentine Eyram🌹</h1>
   <button id="yes">Yes 🥰</button>
   <span id="message">Good girl 🤭🤭. Knew you would give in.😌 Virtual chocolates 🍫.</span>
   <div class="no"><button id="no">No</button></div>
+  <span class="myname">By Nana :)</span>
   <style>
     * {
       margin: 0;
@@ -86,6 +87,15 @@
       top: 45%;
     }
 
+    .myname {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 1rem;
+      color: #fff;
+      z-index: 1001;
+    }
+
 
 
   </style>
@@ -101,8 +111,8 @@
     })
     document.getElementById("yes").addEventListener("click", () => {
       document.getElementById("message").style.top = "0"
+      
     })
   </script>
 </body>
-
 </html>
